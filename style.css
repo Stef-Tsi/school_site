@@ -1,0 +1,1372 @@
+/* #############   ctrl + F  lijst snel zoeken                  ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   1.achtergrond    ( achtergrond css)   ############# */
+/* #############   -------------------------------------------  ############## */
+/* #############   2.menu     -->      ( menu balk css)           ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   3.home     -->      ( home page css)           ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   4.button   -->      ( button css)  ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   5.login    -->      ( login forum css)  ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   6.regestratie  -->  ( regestratie en ziekmeld css)  ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   7.modal_content --> (  css voor de content in de modal)  ############## */
+/* #############   -------------------------------------------  ############## */
+/* #############   8.modal_zelf   -->  (  css voor de modal zelf)  ############## */
+
+
+
+
+/* #1.achterground############   DIT achtergrond en de basis voor mijn content en paar kleinde dingetjes  ############## */
+
+
+:root {
+    --color: #00ff32;
+  }
+
+  .datum {
+    margin-top: 10px;
+
+  }
+
+.eerste {
+  margin-right: 10px;
+}
+
+.twede{
+  padding-left: 10px;
+}
+
+.derde {
+  float: right;
+}
+  body {
+    font-size: 16px;
+    font-family: "Montserrat", sans-sherif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  textarea {
+    margin-top: 10px;
+    height: 150px;
+    width: 300px;
+    background: transparent;
+    color: white;
+    font-size: 16px;
+  }
+  
+  b {
+    font-family: Bradley Hand, cursive;
+  }
+  
+  h3 {
+    position: center;
+    font-family: Bradley Hand, cursive;
+  }
+  
+  .content {
+    max-width: 100%;
+    margin: 0% auto;
+    padding: 0 20px;
+    margin-top: 0%;
+    z-index: 2;
+  }
+  .content-modal {
+    max-width: 1000px;
+    margin: 0% auto;
+    padding: 0 20px;
+    margin-top: 0%;
+    z-index: 20000;
+  }
+  
+  form {
+    z-index: 888;
+  }
+  
+  .hero {
+    position: relative;
+    background: #333333;
+    color: white;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    /* z-index: 90; */
+  }
+  
+  .hero .content {
+    z-index: 2;
+  }
+  
+  .hero h2 {
+    position: relative;
+    z-index: 1;
+    font-size: 4.5rem;
+    margin: 0 0 10px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .hero p {
+    position: relative;
+    z-index: 1;
+    font-size: 3.6rem;
+    color: rgba(30, 255, 0, 0.78);
+    line-height: 1.4;
+  }
+  
+  /* ========================= */
+  
+  .waves {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background-color: var(--color);
+    box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.5);
+    transition: 500ms;
+  }
+  
+  .waves::before,
+  .waves::after {
+    content: "";
+    position: absolute;
+    width: 300vw;
+    height: 300vw;
+    top: -65vw;
+    left: 50%;
+    transform: translate(-50%, -75%);
+  }
+  
+  .waves::before {
+    border-radius: 44%;
+    background: rgb(0, 93, 5);
+    animation: waves 8s linear infinite;
+  }
+  
+  .waves::after {
+    border-radius: 44%;
+    background: rgba(0, 55, 221, 0.5);
+    animation: waves 15s linear infinite;
+  }
+  
+  @keyframes waves {
+    0% {
+      transform: translate(-50%, -75%) rotate(0deg);
+    }
+  
+    100% {
+      transform: translate(-50%, -75%) rotate(360deg);
+    }
+  }
+  
+  /* ##2.menu############### DIT IS MENU ICONS ############## DIT IS MENU ICONS #########################   DIT IS MENU ICONS ############## DIT IS MENU ICONS ############## DIT IS MENU ICONS ############## DIT IS MENU ICONS ############## DIT IS MENU ICONS ############## */
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .clear {
+    clear: both;
+  }
+  
+  .slide-toggle {
+    display: none;
+  }
+  
+  .slidemenu {
+    font-family: arial, sans-serif;
+    max-width: 1000px;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .positie {
+    top: 0;
+    position: absolute;
+    z-index: 2;
+    margin-left: 25vw;
+  }
+  
+  .positie2 {
+    position: absolute;
+    /* z-index: 2000; */
+    margin-left: 25%;
+  }
+  
+  .slidemenu label {
+    width: 20%;
+    text-align: center;
+    display: block;
+    float: left;
+    color: #00ff32;
+    opacity: 0.5;
+  }
+  
+  .slidemenu label:hover {
+    cursor: pointer;
+    color: rgba(0, 255, 50, 0.64);
+  }
+  
+  .slidemenu label span {
+    display: block;
+    padding: 2.08vw;
+  }
+  
+  .slidemenu label .icon {
+    font-size: 1.04vw;
+    border: solid 0.1vw #4973ff;
+    text-align: center;
+    height: 2.6vw;
+    width: 2.6vw;
+    display: block;
+    margin: 0 auto;
+    line-height: 2.6vw;
+    border-radius: 50%;
+  }
+  
+  /*Bar Style*/
+  
+  .slider {
+    width: 100%;
+    height: 0.26vw;
+    display: block;
+    background: rgba(0, 255, 50, 0.89);
+    margin-top: 0 auto;
+    border-radius: 0.26vw;
+  }
+  
+  .slider .bar {
+    width: 25%;
+    height: 0.26vw;
+    background: #4973ff;
+    border-radius: 0.26vw;
+  }
+  
+  /*Animations*/
+  .slidemenu label,
+  .slider .bar {
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+  }
+  
+  /*Toggle*/
+  
+  .slidemenu .slide-toggle:checked + label {
+    opacity: 1;
+  }
+  
+  .slidemenu #slide-item-1:checked ~ .slider .bar {
+    margin-left: 0;
+  }
+  
+  .slidemenu #slide-item-2:checked ~ .slider .bar {
+    margin-left: 20%;
+  }
+  
+  .slidemenu #slide-item-3:checked ~ .slider .bar {
+    margin-left: 40%;
+  }
+  
+  .slidemenu #slide-item-4:checked ~ .slider .bar {
+    margin-left: 60%;
+  }
+  
+  .slidemenu #slide-item-5:checked ~ .slider .bar {
+    margin-left: 80%;
+  }
+  
+  .form__group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 3%;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 1.3rem;
+    color: #fff;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .form__field::placeholder {
+    color: transparent;
+  }
+  
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 30%;
+  }
+  
+  textarea:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 6px;
+    left: 110px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #00ff32;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 4px;
+    border-image: linear-gradient(to right, #00ff32, #4973ff);
+    border-image-slice: 1;
+  }
+  
+  textarea:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 2px;
+    border-image: linear-gradient(to right, #00ff32, #4973ff);
+    border-image-slice: 1;
+  }
+  
+  textarea:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #00ff32;
+    font-weight: 700;
+    left: 110px;
+  }
+  
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1rem;
+    color: #00ff32;
+    font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required,
+  .form__field:invalid {
+    box-shadow: none;
+  }
+  
+  /* ####3.home#####################################   DIT IS intro home  ##################################   DIT IS intro home  #####################################   DIT IS intro home  #########################   DIT IS intro home  #########################   DIT IS intro home  ########################### */
+  
+  * {
+    font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+      "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  }
+  
+  .cyan {
+    color: black;
+  }
+  
+  .cardcont {
+    -webkit-perspective: 150rem;
+    perspective: 150rem;
+    height: 10rem;
+    width: 30rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  @media only screen and (min-width: 100px) and (max-width: 600px) {
+    .cardcont__side,
+    .cardcont__side,
+    .cardcont {
+      width: 28rem !important;
+    }
+  }
+  .cardcont__side {
+    height: 15rem;
+    -webkit-transition: all 0.8s ease;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    width: 30rem;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  
+  .cardcont__side--front {
+    background-image: url("https://cdn.nieuws.nl/media/sites/55/2019/09/26091320/Curio-logo-3.jpg");
+    z-index: 1;
+  }
+  
+  .cardcont__side--back {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+    background-image: url("https://props.fhj.nl/wp-content/uploads/2018/03/Fotoverslag11.jpeg");
+    background-size: cover;
+    z-index: 1;
+  }
+  
+  .cardcont:hover .cardcont__side--front {
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    z-index: 1;
+  }
+  
+  .cardcont:hover .cardcont__side--back {
+    -webkit-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    z-index: 1;
+  }
+  
+  .cardcont__cont {
+    height: 15rem;
+    background-image: url("https://cdn.nieuws.nl/media/sites/55/2019/09/26091320/Curio-logo-3.jpg");
+    background-size: cover;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  
+  .cardcont__cta {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 90%;
+    color: white;
+    z-index: 1;
+  }
+  
+  .cardcont__cta p {
+    margin-left: 1rem;
+    z-index: 1;
+  }
+  
+  .cardcont__cta p > .space {
+    margin-left: 2rem;
+    z-index: 1;
+  }
+  
+  /* ####4.button###################   BUTTON  ##########################   BUTTON  #######################   BUTTON  ##########################   BUTTON  ###########################   BUTTON  ##########################   BUTTON  ###############################   BUTTON  ##################### */
+  
+  @import url("https://fonts.googleapis.com/css?family=Montserrat");
+  
+  #contact_btn {
+    position: absolute;
+    left: 40.3%;
+    top: 60%;
+    /* transform: translate(-@left, -@top); */
+    color: #00ff32;
+    text-decoration: none;
+    font-size: 2em;
+    display: inline-block;
+    font-family: Montserrat;
+    text-transform: uppercase;
+    padding: 0.5em 2em;
+    border: 2px solid #00ff32;
+    -webkit-transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: 0.02s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    background-color: transparent;
+  }
+  
+  #contact_btn::before {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    background: #4973ff;
+    -webkit-transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    z-index: -1;
+  }
+  
+  #contact_btn::after {
+    content: "";
+    display: inline-block;
+    background-image: url("https://lh3.googleusercontent.com/proxy/WyzdxLCXim2KuKx5yFrvwLu5KaTIWtfBXh05GKi_IlH_kyLGtTIPvMSW-vKmxwKhzrcaQAjFx-ba-ka8mYTa6lC3OF7zEYxRsG8yjERgPzAECMEcvUDLVcNevFXsLqE5jbeEx_2uZAqB");
+    position: absolute;
+    top: 0;
+    left: calc(100% - 3em);
+    right: 3em;
+    bottom: 0;
+    background-size: 1.5em;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: right 0.3s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  
+  #contact_btn:hover {
+    padding: 0.5em 3.5em 0.5em 0.5em;
+  }
+  
+  #contact_btn:hover::before {
+    left: calc(100% - 3em);
+    right: 0;
+    -webkit-transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: 0.3s cubic-bezier(0.1, 0, 0.1, 1), left 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  
+  #contact_btn:hover::after {
+    right: 0;
+    -webkit-transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+    transition: right 0.3s 0.2s cubic-bezier(0.1, 0, 0.1, 1);
+  }
+  
+  @media only screen and (min-width: 100px) and (max-width: 600px) {
+    #contact_btn {
+      left: 35% !important;
+    }
+    .slidemenu label span {
+      font-size: 12px;
+      padding: 30px 10px;
+    }
+  }
+  
+  /* ####5.login##############   LOGIN   ##########   LOGIN   #############   LOGIN   #############   LOGIN   #############   LOGIN   #############   LOGIN   #############   LOGIN   ###############   LOGIN   #############   LOGIN   #############   LOGIN   ################################################# */
+  
+  *,
+  ::after,
+  ::before {
+    box-sizing: border-box;
+    z-index: 1;
+  }
+  
+  h4 {
+    font-size: 23px;
+  }
+  
+  .form {
+    position: relative;
+    width: 300px;
+    padding: 64px 15px 24px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  
+  .form .control {
+    margin: 0 0 24px;
+    z-index: 1;
+  }
+  
+  .form .control input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    font-family: monospace, serif;
+    letter-spacing: 0.05em;
+    font-size: 16px;
+    z-index: 1;
+  }
+  
+  .form .control input:hover,
+  .form .control input:focus {
+    outline: none;
+    border: 0;
+    z-index: 2;
+  }
+  
+  .form .btn {
+    width: 100%;
+    display: block;
+    padding: 14px 16px;
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 16px;
+    z-index: 1;
+  }
+  
+  .block-cube {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .block-cube .bg-top {
+    position: absolute;
+    height: 10px;
+    background: #4973ff;
+    background: linear-gradient(90deg, #4973ff 0%, #7dffff 37%, #00ff32 94%);
+    bottom: 100%;
+    left: 5px;
+    right: -5px;
+    transform: skew(-45deg, 0);
+    margin: 0;
+    z-index: 1;
+  }
+  
+  .block-cube .bg-top .bg-inner {
+    bottom: 0;
+    z-index: 1;
+  }
+  
+  .block-cube .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #4973ff;
+    background: linear-gradient(90deg, #4973ff 0%, #7dffff 37%, #00ff32 94%);
+    z-index: 1;
+  }
+  
+  .block-cube .bg-right {
+    position: absolute;
+    background: #4973ff;
+    background: #00ff32;
+    top: -5px;
+    z-index: 1;
+    bottom: 5px;
+    width: 10px;
+    left: 100%;
+    transform: skew(0, -45deg);
+  }
+  
+  .block-cube .bg-right .bg-inner {
+    left: 0;
+    z-index: 1;
+  }
+  
+  .block-cube .bg .bg-inner {
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+  }
+  
+  .block-cube .bg-inner {
+    background: #212121;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    right: 2px;
+    bottom: 2px;
+    z-index: 1;
+  }
+  
+  .block-cube .text2 {
+    position: relative !important;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    color: #fff;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .block-cube.block-input input {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .block-cube.block-input input:focus ~ .bg-right .bg-inner,
+  .block-cube.block-input input:focus ~ .bg-top .bg-inner,
+  .block-cube.block-input input:focus ~ .bg-inner .bg-inner {
+    top: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+  }
+  
+  .block-cube.block-input .bg-top,
+  .block-cube.block-input .bg-right,
+  .block-cube.block-input .bg {
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.2s ease-in-out;
+    z-index: 1;
+  }
+  
+  .block-cube.block-input .bg-right .bg-inner,
+  .block-cube.block-input .bg-top .bg-inner {
+    transition: all 0.2s ease-in-out;
+    z-index: 1;
+  }
+  
+  .block-cube.block-input:focus .bg-top,
+  .block-cube.block-input:focus .bg-right,
+  .block-cube.block-input:focus .bg,
+  .block-cube.block-input:hover .bg-top,
+  .block-cube.block-input:hover .bg-right,
+  .block-cube.block-input:hover .bg {
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 1;
+  }
+  
+  .block-cube.block-cube-hover:focus .bg .bg-inner,
+  .block-cube.block-cube-hover:hover .bg .bg-inner {
+    top: 100%;
+    z-index: 1;
+  }
+  
+  /* ####6.regestratie#####################################   Regestratie  ################################################ */
+  
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:400, 700);
+  
+  html {
+    font-family: "Montserrat", Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  ::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+  }
+  /* Optional: show position indicator in red */
+  ::-webkit-scrollbar-thumb {
+    background: #00ff32;
+  }
+  }
+  
+  button {
+    overflow: visible;
+  }
+  
+  button,
+  select {
+    text-transform: none;
+  }
+  
+  button,
+  input,
+  select,
+  textarea {
+    color: #5a5a5a;
+    font: inherit;
+    margin: 0;
+  
+  }
+  
+  input {
+    line-height: normal;
+  }
+  
+  textarea {
+    overflow: auto;
+  }
+  
+  #containercv {
+    border: solid 0.15vw #00bd05;
+    max-width: 40vw;
+    position: relative;
+    margin-top: 45%;
+    height: 30vw;
+    z-index: 2;
+    overflow: scroll;
+
+  }
+  
+  
+  
+  #containervc {
+    border: solid 0.15vw #00bd05;
+    max-width: 40vw;
+    position: relative;
+    margin-top: 12vw;
+    height: 27vw;
+    z-index: 2;
+
+  }
+  
+  #containervcv {
+    border: solid 0.15vw #00ff32;
+    max-width: 40vw;
+    position: relative;
+    margin-top: 12vw;
+    height: 0vw auto;
+    z-index: 2;
+  
+  }
+  
+  .containercv1 {
+    margin: 0auto;
+    width: 25vw;
+    height: 30vw;
+  
+  
+  }
+  .containercv2 {
+    float: right;
+    width: 48%;
+  
+  }
+  .clear {
+    clear: both;
+  }
+  
+  
+  form {
+    padding: 37.5px;
+    margin: 50px 0;
+  }
+  
+  h1 {
+    color: #00ff32;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 7px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .underline {
+    border-bottom: solid 2px #00ff32;
+    margin: -0.512em auto;
+    width: 80px;
+  }
+  
+  .underline2 {
+    border-bottom: solid 2px #00ff32;
+    margin: -0.512em auto;
+    width: 80px;
+  }
+  
+  .icon_wrapper {
+    margin-top: 20px;
+    width: 100%;
+  
+  }
+  
+  .icon {
+    display: block;
+    fill: #00ff32;
+    height: 3.3vw;
+    margin: 0 auto;
+    width: 3.3vw;
+
+  }
+  
+  .hh {
+    font-size: 20px;
+    margin-top: 1vw;
+  }
+  
+  .icon1 {
+    display: block;
+    fill: #00ff32;
+    height: 2.7vw;
+    margin: 0 auto;
+    width: 2.7vw;
+    margin-bottom: -5vw;
+
+  }
+  
+  .icon2 {
+    display: block;
+    fill: rgba(0, 255, 50, 0.96);
+    height: 2.7vw;
+    margin: 0 auto;
+    width: 2.7vw;
+    margin-bottom: -5vw;
+  
+  }
+  
+  .achternaam {
+    float: right;
+    width: 45%;
+    margin-top: -50px;
+  }
+  
+  input[type="text"],
+  [type="achternaam"],
+  select,
+  textarea {
+    background: none;
+    border: none;
+    border-bottom: solid 2px #00ff32;
+    color: #00ff32;
+    font-size: 1vw;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0 0 0.875em 0;
+    text-transform: uppercase;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  [type="achternaam"]:focus,
+  textarea:focus {
+    outline: none;
+    padding: 0 0 0.875em 0;
+    color: #00ff32;
+  
+  }
+  
+  input[type="date"] {
+    font-size: 15px;
+    padding: 5px 10px;
+    width: 100%;
+    color: #00A000;
+    margin-top: 1vw;
+  }
+
+
+  
+  
+  .message {
+    float: none;
+  }
+  
+  .name {
+    float: left;
+    width: 45%;
+    margin-top: -50px;
+  }
+  
+  select {
+    background: url("https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png") no-repeat right;
+    outline: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  
+  }
+  
+  select::-ms-expand {
+    display: none;
+  }
+  
+  .books {
+    width: 100%;
+  
+  }
+  .authors {
+    width: 500px;
+  }
+  
+  
+  
+  .telephone {
+    width: 100%;
+  }
+  
+  textarea {
+    line-height: 150%;
+    height: 6.5vw;
+    resize: none;
+    width: 100%;
+  }
+  
+  ::-webkit-input-placeholder {
+    color: #00ff32;
+  }
+  
+  :-moz-placeholder {
+    color: #00ff32;
+    opacity: 1;
+  }
+  
+  ::-moz-placeholder {
+    color: #00ff32;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: #00ff32;
+  }
+  
+  #form_button {
+    background: none;
+    border: solid 2px #00ff32;
+    color: #00ff32;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica", Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 1vw;
+  }
+
+
+
+  #form_button2 {
+    background: none;
+    border: solid 2px #00ff32;
+    color: #00ff32;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica", Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    outline: none;
+    padding: 20px 35px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    margin-top: 1vw;
+  }
+  
+  
+  #form_button:hover {
+    background: #00ff32;
+    color: #f2f3eb;
+  }
+  #form_button2:hover {
+    background: #00ff32;
+    color: #f2f3eb;
+  }
+  
+  @media screen and (max-width: 768px) {
+    #container {
+      margin: 20px auto;
+      width: 95%;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    h1 {
+      font-size: 26px;
+    }
+  
+    .underline {
+      width: 68px;
+    }
+  
+  
+    #form_button {
+      padding: 15px 25px;
+    }
+  }
+  
+  @media screen and (max-width: 420px) {
+    h1 {
+      font-size: 18px;
+    }
+  
+    .icon {
+      height: 35px;
+      width: 35px;
+    }
+  
+    .underline {
+      width: 53px;
+    }
+  
+    input[type="text"],
+    [type="achternaam"],
+    select,
+    textarea {
+      font-size: 0.875em;
+    }
+  }
+  
+  /* ######7.modal_content##################################################    MODUL CONTENT ################    MODUL CONTENT ##########    MODUL CONTENT ##########    MODUL CONTENT ##########    MODUL CONTENT ##########    MODUL CONTENT ##########    MODUL CONTENT ######################################## */
+  
+  
+  .modal-content {
+    margin-top: 15%;
+    margin-left: -30%;
+    width: 1000px;
+    max-height: 600px;
+    overflow: scroll;
+  }
+  
+  .modal-body {
+    width: 2000px;
+    max-height: 300px;
+  }
+  
+  .modal-with-tab .modal-with-tab .panel.with-nav-tabs .panel-heading {
+    padding: 5px 5px 0 5px;
+  
+  }
+  .modal-with-tab .panel.with-nav-tabs .nav-tabs {
+    border-bottom: none;
+    background-color: #00ff32;
+  
+  }
+  .modal-with-tab .panel.with-nav-tabs .nav-justified {
+    margin-bottom: -1px;
+  }
+  
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li > a,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li > a:hover,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li > a:focus {
+    color: #4973ff;
+    border-radius: 0;
+  
+  }
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > .open > a,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > .open > a:hover,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > .open > a:focus,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li > a:hover,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li > a:focus {
+    color: #1618ff;
+    background-color: #00ff32;
+    border-color: transparent;
+  }
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.active > a,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.active > a:hover,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.active > a:focus {
+    color: #1618ff;
+    background-color: #00ff32;
+    border-color: #bce8f1;
+    border-bottom-color: transparent;
+  }
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu {
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+  }
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a {
+    color: #00ff32;
+  }
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:hover,
+  .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > li > a:focus {
+    background-color: #bce8f1;
+  }
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a:hover,
+  .modal-with-tab .with-nav-tabs.panel-info .nav-tabs > li.dropdown .dropdown-menu > .active > a:focus {
+    color: #fff;
+    background-color: #1618ff;
+  }
+  
+  /* ##########8.modal_zelf##############################################    MODUL CARD THINGY ###############    MODUL CARD THINGY ############    MODUL CARD THINGY ############    MODUL CARD THINGY ############    MODUL CARD THINGY ############    MODUL CARD THINGY ########################################### */
+  
+  @import url("https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700");
+  
+  :root {
+    --color: #00ff32;
+    --transition-time: 0.5s;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  a {
+    color: inherit;
+  }
+  
+  .cards-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    padding: 4rem;
+    margin: 0 auto;
+    width: max-content;
+    margin-left: -20%;
+  }
+  
+  .card {
+    font-family: "Heebo";
+    --bg-filter-opacity: 0.5;
+    background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))),
+      var(--bg-img);
+    height: 23vw;
+    width: 16vw;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    /*margin: 2em;*/
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5em -1em #00ff32;
+    transition: all, var(--transition-time);
+    position: relative;
+    overflow: hidden;
+    border: 0.5vw solid #00ff32;
+    text-decoration: none;
+    margin-left: 80%;
+    margin-top: 7vw;
+  }
+  
+  .card:hover {
+    transform: rotate(0);
+  }
+  
+  .card h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+  
+  .card p {
+    font-size: 0.75em;
+    font-family: "Open Sans";
+    margin-top: 0.5em;
+    line-height: 2em;
+  }
+  
+  .card .tags {
+    display: flex;
+    color: #00ff32;
+  }
+  
+  .card .tags .tag {
+    font-size: 0.75em;
+    background: rgba(0, 139, 255, 0.5);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, var(--transition-time);
+  }
+  
+  .card:hover .tags .tag {
+    background: var(--color);
+    color: #008bff;
+  }
+  
+  .card:before,
+  .card:after {
+    content: "";
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, var(--transition-time);
+    transition-timing-function: ease-in-out;
+  }
+  
+  .card:before {
+    background: #008bff;
+    width: 250%;
+    height: 250%;
+  }
+  
+  .card:after {
+    background: #008bff;
+    width: 200%;
+    height: 200%;
+  }
+  
+  .card:hover {
+    color: var(--color);
+  }
+  
+  .card:hover:before,
+  .card:hover:after {
+    transform: scale(1);
+  }
+  
+  .card-grid-space .num {
+    font-size: 3em;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
+  }
+  
+  .info {
+    font-size: 1.2em;
+    display: flex;
+    padding: 1em 3em;
+    height: 3em;
+  }
+  
+  .info img {
+    height: 3em;
+    margin-right: 0.5em;
+  }
+  
+  .info h1 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+  
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 1285px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr;
+    }
+    .info {
+      justify-content: center;
+    }
+    .card-grid-space .num {
+      /margin-left: 0;
+      /text-align: center;
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .cards-wrapper {
+      padding: 4rem 2rem;
+    }
+    .card {
+      max-width: calc(100vw - 4rem);
+    }
+  }
+  
+  @media screen and (max-width: 450px) {
+    .info {
+      display: block;
+      text-align: center;
+    }
+    .info h1 {
+      margin: 0;
+    }
+  }
+
+.klas {
+  color: whitesmoke;
+}
